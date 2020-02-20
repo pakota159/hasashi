@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 import sys
+import math
+import numpy
+
 from model import Pizza, Submission
 
 # Setup input, output
@@ -28,9 +31,9 @@ if in_fname:
                 pizza.slices_each_type = number_in_line
 
 pizza.convert_int()
-print(pizza.max_number)
-print(pizza.number_of_types)
-print(pizza.slices_each_type)
+
+# Solution here
+
 
 # Submit
 submission = Submission(out_fname)
