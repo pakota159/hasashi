@@ -1,19 +1,32 @@
 #!/usr/bin/env python3
 
 import sys
+from model import Pizza, Submission
 
 # Setup input and output arguments
 in_fname = "input/" + sys.argv[1] if len(sys.argv) == 2 else False
 out_fname = "output/" + sys.argv[2] if len(sys.argv) == 3 else False
 
+# Create variable/instance to work later
+pizza = Pizza()
+
 # Read input
 if in_fname:
     with open(in_fname) as f:
-        for line in f:
+        for i, line in enumerate(f):
             # Split line
             number_in_line = line.split()
+            if i == 0:
+                pizza.max_number = number_in_line[0]
+                pizza.number_of_types = number_in_line[1]
+            else:
+                pizza.slices_each_type = number_in_line
 
-# Write output
-if out_fname:
-    with open(out_fname, 'w') as out:
-        out.write("x")
+pizza.make_int()
+print(pizza.number_of_types + 1)
+print(pizza.slices_each_type)
+
+# Submit
+submission = Submission(out_fname)
+submission.submit()
+
