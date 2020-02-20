@@ -3,9 +3,14 @@
 import sys
 from model import Pizza, Submission
 
-# Setup input and output arguments
-in_fname = "input/" + sys.argv[1] if len(sys.argv) == 2 else False
-out_fname = "output/" + sys.argv[2] if len(sys.argv) == 3 else False
+# Setup input, output
+if len(sys.argv) == 1:
+    in_fname = "input/a_example.in"
+    out_fname = "output/out.txt"
+else:
+    # Setup input and output arguments
+    in_fname = "input/" + sys.argv[1] if len(sys.argv) == 2 else False
+    out_fname = "output/" + sys.argv[2] if len(sys.argv) == 3 else False
 
 # Create variable/instance to work later
 pizza = Pizza()
@@ -22,8 +27,9 @@ if in_fname:
             else:
                 pizza.slices_each_type = number_in_line
 
-pizza.make_int()
-print(pizza.number_of_types + 1)
+pizza.convert_int()
+print(pizza.max_number)
+print(pizza.number_of_types)
 print(pizza.slices_each_type)
 
 # Submit
