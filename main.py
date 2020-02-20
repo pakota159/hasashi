@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
 import sys
-import math
-import numpy
 
 from model import Pizza, Submission
 
