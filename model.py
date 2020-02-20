@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-class Pizza:
-    def __init__(self):
-        self.max_number = None
-        self.number_of_types = None
-        self.slices_each_type = []
+class Book:
+    def __init__(self, score, book_index):
+        self.score = score
+        self.book_index = book_index
 
-    def convert_int(self):
-        self.max_number = int(self.max_number)
-        self.number_of_types = int(self.number_of_types)
-        self.slices_each_type = list(map(lambda i: int(i), self.slices_each_type))
+
+class Library:
+    def __init__(self, number_of_books, sign_up_days, books_per_day):
+        self.lib_index = None
+        self.number_of_books = number_of_books
+        self.books = {}
+        self.books_per_day = books_per_day
+        self.sign_up_days = sign_up_days
 
 
 class Submission:
