@@ -32,8 +32,13 @@ if in_fname:
 
 pizza.convert_int()
 
-# Solution here
 
+# Solution here
+def solve():
+    pass
+
+
+solve()
 
 # Submit
 submission = Submission(out_fname)
